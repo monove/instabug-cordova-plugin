@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.instabug.phonegap" version="0.1">
+    <name>Instabug SDK</name>
+    <description>Cordova Device Plugin</description>
+    <keywords>instabug,in-app feedback</keywords>
+    <engines>
+        <!-- Requires > 3.3.* because of the custom Framework tag for iOS [CB-5238] -->
+        <!-- Requires > 3.5.0 because of the custom Framework tag for Android [CB-6698] -->
+        <engine name="cordova" version=">=3.5.0" />
+    </engines>
+
+    <asset src="instabug.js" target="js/instabug.js" />
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="InstabugPhoneGap">
+                <param name="android-package" value="com.instabug.phonegap.android.InstabugPhoneGap"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                android:name="com.instabug.library.activity.InstabugAnnotationActivity"
+                android:label="@string/app_name">
+            </activity>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+
+        </config-file>
+
+        <framework src="instabugwrapper" custom="true" />
+        <source-file src="InstabugPhoneGap.java" target-dir="src/com/instabug/phonegap/android" />
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="InstabugPhoneGap">
+                <param name="ios-package" value="InstabugPhoneGap"/>
+            </feature>
+        </config-file>
+
+
+
+        <framework src="QuartzCore.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="GLKit.framework" />
+        <framework src="CoreMotion.framework" />
+        <framework src="OpenGLES.framework" />
+        <framework src="libc++.dylib" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="Foundation.framework" />
+        
+        <resource-file src="Instabug.bundle" />
+        <framework src="Instabug.framework" custom="true" />
+        <header-file src="InstabugPhoneGap.h" />
+        <source-file src="InstabugPhoneGap.m" />
+        
+    </platform>
+
+</plugin>
