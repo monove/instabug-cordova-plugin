@@ -1,0 +1,1 @@
+# instabug-cordova-plugin
