@@ -1,0 +1,26 @@
+{
+    "name": "instabug-cordova-plugin",
+    "version": "0.1.0",
+    "description": "instabug-cordova-plugin",
+    "cordova": {
+        "id": "instabug-cordova-plugin",
+        "platforms": [
+            "android",
+            "ios"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/groupe-sii/instabug-cordova-plugin.git"
+    },
+    "keywords": [
+        "cordova",
+        "instabug"
+    ],
+    "author": "Groupe SII",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/groupe-sii/instabug-cordova-plugin/issues"
+    },
+    "homepage": "https://github.com/groupe-sii/instabug-cordova-plugin#readme"
+}
