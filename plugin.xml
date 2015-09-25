@@ -11,7 +11,9 @@
         <engine name="cordova" version=">=3.5.0" />
     </engines>
 
-    <asset src="instabug.js" target="js/instabug.js" />
+    <js-module src="instabug.js" name="instabug.js">
+        <clobbers target="instabug" />
+    </js-module>
 
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">

@@ -1,48 +1,35 @@
-var InstabugPhoneGap = {
+var exec = require('cordova/exec'),
+    InstabugPhoneGap = {
 
-	init: function(config) {
-	cordova.exec(function(winParam) {},
-	                 function(error) {},
-	                 "InstabugPhoneGap",
-	                 "init",
-	                 [config]);
+        init: function(config) {
+            exec(function(winParam) {},
+                function(error) {},
+                "InstabugPhoneGap",
+                "init", [config]);
 
-	},
+        },
 
-	invoke: function() {
-			cordova.exec(function(winParam) {},
-	                 function(error) {},
-	                 "InstabugPhoneGap",
-	                 "invoke",
-	                 []);
+        invoke: function() {
+            exec(function(winParam) {},
+                function(error) {},
+                "InstabugPhoneGap",
+                "invoke", []);
 
-	},
+        },
 
-	invokeBugReporter: function() {
-			cordova.exec(function(winParam) {},
-	                 function(error) {},
-	                 "InstabugPhoneGap",
-	                 "invokeBugReporter",
-	                 []);
-	},
+        invokeBugReporter: function() {
+            exec(function(winParam) {},
+                function(error) {},
+                "InstabugPhoneGap",
+                "invokeBugReporter", []);
+        },
 
-	invokeFeedbackSender: function() {
-			cordova.exec(function(winParam) {},
-	                 function(error) {},
-	                 "InstabugPhoneGap",
-	                 "invokeFeedbackSender",
-	                 []);
-	},
+        invokeFeedbackSender: function() {
+            exec(function(winParam) {},
+                function(error) {},
+                "InstabugPhoneGap",
+                "invokeFeedbackSender", []);
+        }
+    }
 
-
-
-}
-
-
-
-/*
-
-instabug_init();
-
-
-*/
+module.exports = InstabugPhoneGap;
