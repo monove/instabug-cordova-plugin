@@ -22,7 +22,7 @@ instabug.invokeFeedbackSender();
 
 ### Configuration
 
-Configuration can be passed in init function and reflect Instabug API reference (https://instabug.com/public/ios-api-reference/hierarchy.html).
+Configuration can be passed in init function and reflects Instabug API reference (https://instabug.com/public/ios-api-reference/hierarchy.html).
 
 The options are:
 
