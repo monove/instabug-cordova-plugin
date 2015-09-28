@@ -1,4 +1,8 @@
 # instabug-cordova-plugin
+[![NPM version][npm-image]][npm-url]
+
+[npm-url]: https://badge.fury.io/js/com.instabug.phonegap.svg
+[npm-image]: https://badge.fury.io/js/com.instabug.phonegap.svg
 
 Offers an easy Instabug (https://instabug.com) integration in your cordova projects.
 
