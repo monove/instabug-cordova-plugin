@@ -1,6 +1,6 @@
 {
     "name": "com.instabug.phonegap",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "instabug-cordova-plugin",
     "cordova": {
         "id": "instabug-cordova-plugin",
