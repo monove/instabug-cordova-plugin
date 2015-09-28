@@ -6,7 +6,63 @@
 
     - (void)init:(CDVInvokedUrlCommand*)command{
         NSMutableDictionary* options = [command.arguments objectAtIndex:0];
+        
         NSString* appToken = [options objectForKey:@"iosToken"];
+        NSString* appLocale = [options objectForKey:@"appLocale"];
+        NSString* bugHeaderText = [options objectForKey:@"bugHeaderText"];
+        NSString* feedbackHeaderText = [options objectForKey:@"feedbackHeaderText"];
+
+        if(bugHeaderText != nil) {
+            [Instabug setBugHeaderText:bugHeaderText];
+        }
+        if(feedbackHeaderText != nil) {
+            [Instabug setFeedbackHeaderText:feedbackHeaderText];
+        }
+        
+        if(appLocale != nil) {
+            IBGLocale lang = IBGLocaleEnglish;
+            
+            if ([appLocale  isEqual: @"IBGLocaleArabic"]) {
+                lang = IBGLocaleArabic;
+            } else if ([appLocale  isEqual: @"IBGLocaleChineseSimplified"]) {
+                lang = IBGLocaleChineseSimplified;
+            } else if ([appLocale  isEqual: @"IBGLocaleChineseTraditional"]) {
+                lang = IBGLocaleChineseTraditional;
+            } else if ([appLocale  isEqual: @"IBGLocaleEnglish"]) {
+                lang = IBGLocaleEnglish;
+            } else if ([appLocale  isEqual: @"IBGLocaleFinnish"]) {
+                lang = IBGLocaleFinnish;
+            } else if ([appLocale  isEqual: @"IBGLocaleFrench"]) {
+                lang = IBGLocaleFrench;
+            } else if ([appLocale  isEqual: @"IBGLocaleGerman"]) {
+                lang = IBGLocaleGerman;
+            } else if ([appLocale  isEqual: @"IBGLocaleItalian"]) {
+                lang = IBGLocaleItalian;
+            } else if ([appLocale  isEqual: @"IBGLocaleJapanese"]) {
+                lang = IBGLocaleJapanese;
+            } else if ([appLocale  isEqual: @"IBGLocaleKorean"]) {
+                lang = IBGLocaleKorean;
+            } else if ([appLocale  isEqual: @"IBGLocalePolish"]) {
+                lang = IBGLocalePolish;
+            } else if ([appLocale  isEqual: @"IBGLocalePortuguese"]) {
+                lang = IBGLocalePortuguese;
+            } else if ([appLocale  isEqual: @"IBGLocalePortugueseBrazil"]) {
+                lang = IBGLocalePortugueseBrazil;
+            } else if ([appLocale  isEqual: @"IBGLocaleRussian"]) {
+                lang = IBGLocaleRussian;
+            } else if ([appLocale  isEqual: @"IBGLocaleSlovenian"]) {
+                lang = IBGLocaleSlovenian;
+            } else if ([appLocale  isEqual: @"IBGLocaleSpanish"]) {
+                lang = IBGLocaleSpanish;
+            } else if ([appLocale  isEqual: @"IBGLocaleSwedish"]) {
+                lang = IBGLocaleSwedish;
+            } else if ([appLocale  isEqual: @"IBGLocaleTurkish"]) {
+                lang = IBGLocaleSwedish;
+            }
+            
+            [Instabug setLocale:lang];
+        }
+        
         [Instabug startWithToken:appToken captureSource:IBGCaptureSourceUIKit invocationEvent:IBGInvocationEventShake];
 
         UIColor* headerColor = [self colorFromHexString: [options objectForKey:@"barBackground"]];
