@@ -28,15 +28,19 @@ public class InstabugPhoneGap extends CordovaPlugin {
             }
             int barBackground = Color.parseColor(configJson.getString("barBackground"));
             int barForeground = Color.parseColor(configJson.getString("barForeground"));
+            String bugHeaderText = configJson.getString("bugHeaderText");
             Instabug.initialize(mCordova.getActivity().getApplication(), configJson.getString("androidToken"))
                     .setAnnotationActivityClass(InstabugAnnotationActivity.class)
-                    .setInvocationEvent(Instabug.INVOCATION_OVERFLOW | Instabug.INVOCATION_SHAKE)
+                    .setInvocationEvent(Instabug.INVOCATION_SHAKE)
                     .setShowIntroDialog(configJson.optBoolean("showIntroDialog", true))
                     .enableEmailField(configJson.optBoolean("emailEnabled", true), configJson.optBoolean("emailRequired", false))
                     .setSdkStyleColors(0xFFFFFFFF, barBackground, barForeground, barBackground, barForeground)
                     .setShowPostFeedbackToast(true)
                     .setShowTutorial(configJson.optBoolean("showTutorial", true));
             Instabug.getInstance().setActivity(mCordova.getActivity());
+            if(bugHeaderText != null && ! bugHeaderText.isEmpty()) {
+                Instabug.getInstance().setBugHeaderText(bugHeaderText);
+            }
             callbackContext.success();
         } else if("invoke".equals(action)) {
             Instabug.getInstance().invokeFeedbackProcess();
