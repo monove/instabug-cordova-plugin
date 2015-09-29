@@ -49,7 +49,7 @@
             </feature>
         </config-file>
 
-        <dependency id="com.instabug.phonegap.ios" url="https://github.com/groupe-sii/instabug-cordova-plugin-ios-framework" commit="master" subdir="instabug-cordova-plugin-ios-framework" />
+        <dependency id="com.instabug.phonegap.ios" url="https://github.com/groupe-sii/instabug-cordova-plugin-ios-framework" commit="master"/>
 
         <header-file src="InstabugPhoneGap.h" />
         <source-file src="InstabugPhoneGap.m" />
