@@ -49,22 +49,8 @@
             </feature>
         </config-file>
 
+        <dependency id="com.instabug.phonegap.ios" url="https://github.com/groupe-sii/instabug-cordova-plugin-ios-framework" commit="master" subdir="instabug-cordova-plugin-ios-framework" />
 
-
-        <framework src="QuartzCore.framework" />
-        <framework src="UIKit.framework" />
-        <framework src="MessageUI.framework" />
-        <framework src="GLKit.framework" />
-        <framework src="CoreMotion.framework" />
-        <framework src="OpenGLES.framework" />
-        <framework src="libc++.dylib" />
-        <framework src="AudioToolbox.framework" />
-        <framework src="CoreTelephony.framework" />
-        <framework src="SystemConfiguration.framework" />
-        <framework src="Foundation.framework" />
-        
-        <resource-file src="Instabug.bundle" />
-        <framework src="Instabug.framework" custom="true" />
         <header-file src="InstabugPhoneGap.h" />
         <source-file src="InstabugPhoneGap.m" />
         
