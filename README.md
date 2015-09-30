@@ -35,6 +35,8 @@ The options are:
 | iosToken | String |  true  | The token that identifies the app, you can find it on your dashboard |
 | barBackground | String |       | The header background and buttons font color |
 | barForeground | String |       | The buttons background and the header font color |
+| buttonsColor | String |       | The buttons background color |
+| buttonsFontColor | String |       | The buttons font color |
 | bugHeaderText | String |       | The text displayed in the header and the action sheet representing bug reports |
 | feedbackHeaderText | String |       | The text displayed in the header and the action sheet representing feedback reports |
 | appLocale | String |       | The locale used to display the strings in the correct language. [Check list below.](#Locales) |
