@@ -66,12 +66,17 @@
         [Instabug startWithToken:appToken captureSource:IBGCaptureSourceUIKit invocationEvent:IBGInvocationEventShake];
 
         UIColor* headerColor = [self colorFromHexString: [options objectForKey:@"barBackground"]];
-        UIColor* headerForegroundColor = [self colorFromHexString: [options objectForKey:@"barForeground"]];
-
         [Instabug setHeaderColor:headerColor];
-        [Instabug setHeaderFontColor:headerForegroundColor];
-        [Instabug setButtonsColor:headerForegroundColor];
         [Instabug setButtonsFontColor:headerColor];
+        
+        UIColor* headerForegroundColor = [self colorFromHexString: [options objectForKey:@"barForeground"]];
+        [Instabug setHeaderFontColor:headerForegroundColor];
+        
+        NSString* buttonsColorStr = [options objectForKey:@"buttonsColor"];
+        if(buttonsColorStr != nil) {
+            UIColor* buttonsColor = [self colorFromHexString: buttonsColorStr];
+            [Instabug setButtonsColor:buttonsColor];
+        }
 
         id emailEnabled = [options objectForKey:@"emailEnabled"];
         id emailRequired = [options objectForKey:@"emailRequired"];
