@@ -76,6 +76,8 @@
         if(buttonsColorStr != nil) {
             UIColor* buttonsColor = [self colorFromHexString: buttonsColorStr];
             [Instabug setButtonsColor:buttonsColor];
+            UIColor* buttonsFontColor = [self colorFromHexString: [options objectForKey:@"buttonsFontColor"]];
+            [Instabug setButtonsFontColor:buttonsFontColor];
         }
 
         id emailEnabled = [options objectForKey:@"emailEnabled"];
