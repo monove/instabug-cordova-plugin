@@ -41,6 +41,9 @@ public class InstabugPhoneGap extends CordovaPlugin {
             if(bugHeaderText != null && ! bugHeaderText.isEmpty()) {
                 Instabug.getInstance().setBugHeaderText(bugHeaderText);
             }
+            if(bugHeaderText != null && ! bugHeaderText.isEmpty()) {
+                Instabug.getInstance().setBugHeaderText(bugHeaderText);
+            }         
             callbackContext.success();
         } else if("invoke".equals(action)) {
             Instabug.getInstance().invokeFeedbackProcess();
