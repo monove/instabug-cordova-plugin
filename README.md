@@ -6,6 +6,11 @@
 
 Offers an easy Instabug (https://instabug.com) integration in your cordova projects.
 
+## SDK Version
+
+- iOS : 1.7
+- Android : 1.7
+
 ## Installation
 
 ```
