@@ -38,6 +38,7 @@ The options are:
 |      Option       |    Value   |   Required   |     Description   |
 |-------------------|------------|--------------|-------------------|
 | iosToken | String |  true  | The token that identifies the app, you can find it on your dashboard |
+| androidToken | String |  true  | The token that identifies the app, you can find it on your dashboard |
 | barBackground | String |       | The header background and buttons font color |
 | barForeground | String |       | The buttons background and the header font color |
 | buttonsColor | String |       | The buttons background color |
