@@ -29,11 +29,12 @@ public class InstabugPhoneGap extends CordovaPlugin {
             int barBackground = Color.parseColor(configJson.getString("barBackground"));
             int barForeground = Color.parseColor(configJson.getString("barForeground"));
             String bugHeaderText = configJson.getString("bugHeaderText");
+            String userID = configJson.getString("userID");
             Instabug.initialize(mCordova.getActivity().getApplication(), configJson.getString("androidToken"))
                     .setAnnotationActivityClass(InstabugAnnotationActivity.class)
                     .setInvocationEvent(Instabug.INVOCATION_SHAKE)
                     .setShowIntroDialog(configJson.optBoolean("showIntroDialog", true))
-                    .enableEmailField(configJson.optBoolean("emailEnabled", true), configJson.optBoolean("emailRequired", false))
+                    .enableEmailField(false)
                     .setSdkStyleColors(0xFFFFFFFF, barBackground, barForeground, barBackground, barForeground)
                     .setShowPostFeedbackToast(true)
                     .setShowTutorial(configJson.optBoolean("showTutorial", true));
@@ -41,8 +42,8 @@ public class InstabugPhoneGap extends CordovaPlugin {
             if(bugHeaderText != null && ! bugHeaderText.isEmpty()) {
                 Instabug.getInstance().setBugHeaderText(bugHeaderText);
             }
-            if(bugHeaderText != null && ! bugHeaderText.isEmpty()) {
-                Instabug.getInstance().setBugHeaderText(bugHeaderText);
+            if(userID != null && ! userID.isEmpty()) {
+                Instabug.getInstance().setUserData(userID);
             }         
             callbackContext.success();
         } else if("invoke".equals(action)) {
