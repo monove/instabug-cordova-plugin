@@ -34,7 +34,7 @@ public class InstabugPhoneGap extends CordovaPlugin {
                     .setAnnotationActivityClass(InstabugAnnotationActivity.class)
                     .setInvocationEvent(Instabug.INVOCATION_SHAKE)
                     .setShowIntroDialog(configJson.optBoolean("showIntroDialog", true))
-                    .enableEmailField(false)
+                    .enableEmailField(configJson.optBoolean("emailEnabled", true), configJson.optBoolean("emailRequired", false))
                     .setSdkStyleColors(0xFFFFFFFF, barBackground, barForeground, barBackground, barForeground)
                     .setShowPostFeedbackToast(true)
                     .setShowTutorial(configJson.optBoolean("showTutorial", true));
