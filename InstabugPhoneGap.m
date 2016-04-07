@@ -10,10 +10,14 @@
         NSString* appToken = [options objectForKey:@"iosToken"];
         NSString* appLocale = [options objectForKey:@"appLocale"];
         NSString* bugHeaderText = [options objectForKey:@"bugHeaderText"];
+        NSString* userData = [options objectForKey:@"userData"];
         NSString* feedbackHeaderText = [options objectForKey:@"feedbackHeaderText"];
 
         if(bugHeaderText != nil) {
             [Instabug setBugHeaderText:bugHeaderText];
+        }
+        if(userData != nil) {
+            [Instabug setUserData:userData];
         }
         if(feedbackHeaderText != nil) {
             [Instabug setFeedbackHeaderText:feedbackHeaderText];
